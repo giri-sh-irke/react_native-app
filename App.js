@@ -7,68 +7,54 @@ import {
   TextInput,
   Button,
 } from "react-native-paper";
+
+//Components
+import IntensitySlider from "./components/IntensitySlider";
 //0.63.2
 export default function App() {
   const [text, setText] = React.useState("");
+  const sliderCount = 5;
 
   return (
     <PaperProvider>
       <View style={styles.container}>
         <Text style={styles.label}>Set new theme</Text>
-        
-        <View style={{paddingTop:50}}>
+
+        <View style={{ paddingTop: 50 }}>
           <TextInput
             mode="outlined"
             label="Name"
             placeholder="Enter name"
-            right={<TextInput.Affix text="/100" />}
-          />
-          <Slider
-            style={{ width: 200, height: 40, marginTop: 30 }}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor="#FFFFFF"
-            maximumTrackTintColor="#000000"
+            right={<TextInput.Affix />}
           />
 
-          <Slider
-            style={{ width: 200, height: 40, marginTop: 30, marginBottom: 30 }}
-            minimumValue={0}
-            maximumValue={1}
-            minimumTrackTintColor="#FFFFFF"
-            maximumTrackTintColor="#000000"
-          />
-
-          {/* <Button
-          style={{ marginTop: 90 }}
-          title="Press me"
-          onPress={buttonCLickHandler}
-        /> */}
-          <View style={styles.row}>
-            <Button
-              icon="check"
-              mode="contained"
-              styles={styles.button}
-              onPress={buttonCLickHandler}
-            >
-              Apply
-            </Button>
-            <Button
-              icon="content-save"
-              mode="contained"
-              styles={styles.button}
-              onPress={buttonCLickHandler}
-            >
-              Save
-            </Button>
-            <Button
-              icon="cancel"
-              mode="outlined"
-              styles={styles.button}
-              onPress={buttonCLickHandler}
-            >
-              Cancel
-            </Button>
+          <IntensitySlider count={sliderCount}/>
+          <View style={{ marginTop: 30 }}>
+            <View style={styles.row}>
+              <Button
+                icon="check"
+                mode="contained"
+                styles={styles.button}
+                onPress={buttonCLickHandler}
+              >Apply
+              </Button>
+              <Button
+                icon="content-save"
+                mode="contained"
+                styles={styles.button}
+                onPress={buttonCLickHandler}
+              >
+                Save
+              </Button>
+              <Button
+                icon="cancel"
+                mode="outlined"
+                styles={styles.button}
+                onPress={buttonCLickHandler}
+              >
+                Cancel
+              </Button>
+            </View>
           </View>
         </View>
         <StatusBar style="auto" />
