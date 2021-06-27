@@ -1,59 +1,79 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import * as React from "react";
+import { StyleSheet, Text, View, Alert } from "react-native";
+import Slider from "@react-native-community/slider";
 import {
-  StyleSheet,
-  Button,
-  Text,
+  Provider as PaperProvider,
   TextInput,
-  View,
-  Slider,
-  Alert,
-} from "react-native";
-// import { Slider } from "@react-native-community/slider";
-
+  Button,
+} from "react-native-paper";
+//0.63.2
 export default function App() {
-  const calculateNumber = 600;
+  const [text, setText] = React.useState("");
+
   return (
-    <View style={styles.container}>
-      <Text>Real time! {calculateNumber}</Text>
-      <TextInput
-        style={{
-          height: 40,
-          width: 100,
-          borderColor: "gray",
-          borderWidth: 1,
-        }}
-        defaultValue="Enter text here"
-      ></TextInput>
-      <Slider
-        style={{ width: 250, marginTop: 30 }}
-        step={1}
-        minimumValue={18}
-        maximumValue={71}
-        //  onValueChange={val => this.setState({ age: val })}
-        //  onSlidingComplete={ val => this.getVal(val)}
-      />
-      <Slider
-        style={{ width: 250, marginTop: 30 }}
-        step={1}
-        minimumValue={18}
-        maximumValue={71}
-        //  onValueChange={val => this.setState({ age: val })}
-        //  onSlidingComplete={ val => this.getVal(val)}
-      />
-      <Slider
-        style={{ width: 250, marginTop: 30 }}
-        step={1}
-        minimumValue={18}
-        maximumValue={71}
-        //  onValueChange={val => this.setState({ age: val })}
-        //  onSlidingComplete={ val => this.getVal(val)}
-      />
+    <PaperProvider>
+      <View style={styles.container}>
+        <Text style={styles.label}>Set new theme</Text>
+        
+        <View style={{paddingTop:50}}>
+          <TextInput
+            mode="outlined"
+            label="Name"
+            placeholder="Enter name"
+            right={<TextInput.Affix text="/100" />}
+          />
+          <Slider
+            style={{ width: 200, height: 40, marginTop: 30 }}
+            minimumValue={0}
+            maximumValue={1}
+            minimumTrackTintColor="#FFFFFF"
+            maximumTrackTintColor="#000000"
+          />
 
-      <Button style={{marginTop: 90}} title="Press me" onPress={buttonCLickHandler} />
+          <Slider
+            style={{ width: 200, height: 40, marginTop: 30, marginBottom: 30 }}
+            minimumValue={0}
+            maximumValue={1}
+            minimumTrackTintColor="#FFFFFF"
+            maximumTrackTintColor="#000000"
+          />
 
-      <StatusBar style="auto" />
-    </View>
+          {/* <Button
+          style={{ marginTop: 90 }}
+          title="Press me"
+          onPress={buttonCLickHandler}
+        /> */}
+          <View style={styles.row}>
+            <Button
+              icon="check"
+              mode="contained"
+              styles={styles.button}
+              onPress={buttonCLickHandler}
+            >
+              Apply
+            </Button>
+            <Button
+              icon="content-save"
+              mode="contained"
+              styles={styles.button}
+              onPress={buttonCLickHandler}
+            >
+              Save
+            </Button>
+            <Button
+              icon="cancel"
+              mode="outlined"
+              styles={styles.button}
+              onPress={buttonCLickHandler}
+            >
+              Cancel
+            </Button>
+          </View>
+        </View>
+        <StatusBar style="auto" />
+      </View>
+    </PaperProvider>
   );
 }
 
@@ -64,8 +84,23 @@ const buttonCLickHandler = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: 50,
+    padding: 20,
+    backgroundColor: "#eaeff3",
+    // alignItems: "center",
+    // justifyContent: "center",
+  },
+  label: {
+    textAlign: "center",
+    marginBottom: 10,
+    fontSize: 24,
+  },
+  button: {
+    width: "30",
+  },
+  row: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
   },
 });
