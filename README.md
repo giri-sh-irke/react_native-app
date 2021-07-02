@@ -5,6 +5,7 @@ A mobile application to control light intensity of fish pond, developed in react
 1. react-native-tutorial - https://reactnative.dev/docs/getting-started
 2. react-native-paper - https://callstack.github.io/react-native-paper/index.html 
 3. expo.io - https://expo.io
+4. React Native version - 0.63.2
 
 *Important*
 1. To create standalone apk on macOS, Install JDK using - https://code2care.org/howto/this-operation-couldnt-be-completed-unable-to-locate-a-java-runtime-maos  
