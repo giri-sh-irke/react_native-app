@@ -12,4 +12,4 @@ A mobile application to control light intensity of fish pond, developed in react
 2. A build is created and hosted on expo.io. Login and check the builds section.
 
 **Theme screen screenshot**
-<!-- ![alt text](https://github.com/giri-sh-irke/[reponame]/blob/[branch]/image.jpg?raw=true) -->
+![alt text](https://github.com/giri-sh-irke/react_native-app/blob/main/assets/1626540901283.JPEG?raw=true)
