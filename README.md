@@ -11,5 +11,4 @@ A mobile application to control light intensity of fish pond, developed in react
 1. To create standalone apk on macOS, Install JDK using - https://code2care.org/howto/this-operation-couldnt-be-completed-unable-to-locate-a-java-runtime-maos  
 2. A build is created and hosted on expo.io. Login and check the builds section.
 
-**Theme screen screenshot**
-![alt text](https://github.com/giri-sh-irke/react_native-app/blob/main/assets/1626540901283.JPEG?raw=true)
+<img src="https://github.com/giri-sh-irke/react_native-app/blob/main/assets/1626540901283.JPEG?raw=true" alt="screenshot" width="200"/>
