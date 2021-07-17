@@ -15,12 +15,12 @@ export default function IntensitySlider(props) {
   return (
     <View>
       {slidersList.map((sliderName) => (
-        <View style={styles.sliderRow}>
+        <View key={sliderName} style={styles.sliderRow}>
           <Text style={{ alignSelf: "center", fontWeight: "bold" }}>
             Channel {sliderName}
           </Text>
           <Slider
-            key={sliderName}
+            
             style={{ width: 250, height: 40 }}
             minimumValue={0}
             maximumValue={100}
